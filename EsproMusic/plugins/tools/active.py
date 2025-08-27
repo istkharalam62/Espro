@@ -12,7 +12,7 @@ from EsproMusic.utils.database import (
 )
 
 
-@app.on_message(filters.command(["activevc", "activevoice"]) & SUDOERS)
+@app.on_message(filters.command(["ac", "activevc"]) & SUDOERS)
 async def activevc(_, message: Message):
     mystic = await message.reply_text("» ɢᴇᴛᴛɪɴɢ ᴀᴄᴛɪᴠᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛs ʟɪsᴛ...")
     served_chats = await get_active_chats()
@@ -73,4 +73,4 @@ async def activevi_(_, message: Message):
         await mystic.edit_text(
             f"<b>» ʟɪsᴛ ᴏғ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛs :</b>\n\n{text}",
             disable_web_page_preview=True,
-        )
+    )
